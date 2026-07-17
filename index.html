@@ -2,86 +2,79 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kenangan TMTK - Sebuah Persembahan</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+    <title>Buku Kenangan TMTK</title>
     <style>
-        body { margin: 0; background: #fdfaf6; font-family: 'Montserrat', sans-serif; color: #4a4a4a; overflow-x: hidden; }
+        body { margin: 0; display: flex; justify-content: center; align-items: center; min-height: 100vh; background: #2c3e50; font-family: 'Georgia', serif; }
         
-        /* Layar Awal (Cover) */
-        #welcome-screen { 
-            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
-            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://www.transparenttextures.com/patterns/paper-fibers.png');
-        }
-        h1 { font-family: 'Cormorant Garamond', serif; font-size: 3em; margin-bottom: 10px; color: #2c3e50; }
-        .btn-open { 
-            margin-top: 20px; padding: 15px 40px; border: 1px solid #2c3e50; background: transparent;
-            cursor: pointer; transition: 0.5s; text-transform: uppercase; letter-spacing: 2px;
-        }
-        .btn-open:hover { background: #2c3e50; color: white; }
-
-        /* Konten Utama */
-        #main-content { display: none; width: 80%; max-width: 600px; margin: 50px auto; }
-        .section { margin-bottom: 100px; opacity: 0; transform: translateY(50px); transition: all 1s ease-out; }
-        .visible { opacity: 1; transform: translateY(0); }
+        /* Animasi Buku */
+        .book { width: 400px; height: 500px; background: #fff; border-radius: 10px; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.5); display: flex; flex-direction: column; padding: 40px; overflow-y: auto; transition: transform 0.5s; }
+        .book:hover { transform: scale(1.02); }
         
-        img { width: 100%; border-radius: 5px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
-        h2 { font-family: 'Cormorant Garamond', serif; font-size: 2em; color: #8e44ad; }
-        p { font-size: 1.1em; line-height: 1.8; }
+        #welcome { text-align: center; color: #333; }
+        #pages { display: none; }
+        
+        img { width: 100%; border-radius: 5px; margin: 15px 0; border: 3px solid #fdfbf7; box-shadow: 0 5px 10px rgba(0,0,0,0.1); }
+        h1 { color: #8e44ad; font-style: italic; }
+        p { line-height: 1.6; color: #555; }
+        
+        /* Galeri Foto Random */
+        .random-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
+        .random-grid img { height: 120px; object-fit: cover; }
 
-        /* Grid Foto Random */
-        .random-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 20px; }
-        .random-grid img { height: 180px; object-fit: cover; }
+        .btn-open { padding: 15px 30px; background: #8e44ad; color: white; border: none; cursor: pointer; border-radius: 5px; }
     </style>
 </head>
 <body>
 
-    <div id="welcome-screen">
-        <p>Persembahan untuk Bapak/Ibu Dosen</p>
-        <h1>Tadris Matematika</h1>
-        <button class="btn-open" onclick="bukaUndangan()">Buka Kenangan</button>
-    </div>
+    <div class="book">
+        <!-- Halaman Awal (Undangan) -->
+        <div id="welcome">
+            <h1>Sebuah Cerita...</h1>
+            <p>Untuk Bapak/Ibu Dosen TMTK,<br>Sebuah kenangan yang kami rangkum dalam lembaran digital ini.</p>
+            <button class="btn-open" onclick="bukaBuku()">Buka Buku</button>
+        </div>
 
-    <div id="main-content">
-        <div class="section fade-in">
+        <!-- Halaman Isi -->
+        <div id="pages">
             <img src="foto 1.jpg">
-            <h2>Awal Langkah</h2>
-            <p>"Terima kasih telah membimbing kami dari nol, mengubah rasa takut akan angka menjadi rasa cinta pada ilmu."</p>
-        </div>
+            <p>"Di balik setiap angka yang Bapak/Ibu ajarkan, ada doa tulus yang menyertai setiap langkah kami."</p>
+            
+            <img src="foto 2.jpeg">
+            <p>"Kesabaran Bapak/Ibu adalah tempat kami pulang. Ilmu ini adalah warisan yang tak akan tergantikan."</p>
 
-        <div class="section fade-in">
-            <img src="foto 2.jpg">
-            <h2>Ketulusan Bimbingan</h2>
-            <p>"Di setiap bimbingan, Bapak/Ibu tidak hanya mengoreksi skripsi kami, tapi juga menguatkan keyakinan kami untuk melangkah lebih jauh."</p>
-        </div>
+            <img src="foto 3.jpeg">
+            <p>"Terima kasih atas dedikasi yang tak mungkin kami balas. Jasa Bapak/Ibu akan selalu menjadi lentera."</p>
 
-        <div class="section fade-in">
-            <img src="foto 3.jpg">
-            <h2>Jasa yang Abadi</h2>
-            <p>"Ilmu yang Bapak/Ibu berikan adalah lentera. Meski waktu memisahkan kita, jasa Bapak/Ibu akan selamanya tertanam dalam diri kami."</p>
-        </div>
-
-        <div class="section fade-in">
-            <h2>Momen Hangat Lainnya</h2>
+            <h3>Momen Hangat Lainnya</h3>
             <div class="random-grid">
-                <img src="foto 4.jpg"><img src="foto 5.jpg">
-                <img src="foto 6.jpg"><img src="foto 7.jpg">
+                <img src="foto4.jpg">
+                <img src="foto5.jpg">
+                <img src="foto6.jpg">
+                <img src="foto7.jpg">
+                <img src="foto 8.jpg">
+                <img src="foto 9.JPG">
+                <img src="foto 10.jpg">
+                <img src="foto 11.JPG">
+                <img src="foto 12.JPG">
+                <img src="foto 13.jpg">
+                <img src="foto 14.jpg">
+                <img src="foto 15.jpg">
+                <img src="foto 20.JPG">
+                <img src="foto 17.jpg">
+                <img src="foto 18.webp">
+                <img src="foto 19.jpg">
             </div>
-            <p style="text-align: center; margin-top: 30px;">"Terima kasih atas segalanya."</p>
+            <p style="text-align:center; margin-top:30px;"><b>— Terima Kasih —</b></p>
         </div>
     </div>
 
     <audio id="lagu" src="lagu.mp3" loop></audio>
 
     <script>
-        function bukaUndangan() {
-            document.getElementById('welcome-screen').style.display = 'none';
-            document.getElementById('main-content').style.display = 'block';
+        function bukaBuku() {
+            document.getElementById('welcome').style.display = 'none';
+            document.getElementById('pages').style.display = 'block';
             document.getElementById('lagu').play();
-            
-            // Animasi scroll muncul
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(s => s.classList.add('visible'));
         }
     </script>
 </body>
