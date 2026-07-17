@@ -3,102 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Surat Cinta untuk Dosen TMTK</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+    <title>Kenangan TMTK - Sebuah Persembahan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <style>
-        body { 
-            margin: 0; padding: 0; font-family: 'Poppins', sans-serif;
-            background: linear-gradient(-45deg, #e3e2df, #d1ccc0, #b2bec3, #a29bfe);
-            background-size: 400% 400%;
-            animation: gradient 15s ease infinite;
-            color: #2d3436; display: flex; flex-direction: column; align-items: center; min-height: 100vh;
-        }
-        @keyframes gradient { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
-
+        body { margin: 0; background: #fdfaf6; font-family: 'Montserrat', sans-serif; color: #4a4a4a; overflow-x: hidden; }
+        
+        /* Layar Awal (Cover) */
         #welcome-screen { 
-            text-align: center; height: 100vh; display: flex; flex-direction: column; 
-            justify-content: center; align-items: center; width: 100%;
+            height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center;
+            background: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('https://www.transparenttextures.com/patterns/paper-fibers.png');
         }
-        h1 { font-family: 'Playfair Display', serif; font-size: 2.5em; margin-bottom: 10px; }
-
+        h1 { font-family: 'Cormorant Garamond', serif; font-size: 3em; margin-bottom: 10px; color: #2c3e50; }
         .btn-open { 
-            padding: 15px 30px; font-size: 1.1em; background: transparent; border: 2px solid #2d3436;
-            cursor: pointer; transition: 0.4s; border-radius: 5px;
+            margin-top: 20px; padding: 15px 40px; border: 1px solid #2c3e50; background: transparent;
+            cursor: pointer; transition: 0.5s; text-transform: uppercase; letter-spacing: 2px;
         }
-        .btn-open:hover { background: #2d3436; color: white; }
+        .btn-open:hover { background: #2c3e50; color: white; }
 
-        #main-content { display: none; width: 90%; max-width: 600px; padding: 40px 0; }
-        .moment { margin-bottom: 80px; text-align: center; }
-        .moment img { width: 100%; border-radius: 10px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); margin-bottom: 20px; }
-        .moment p { font-size: 1.2em; line-height: 1.8; font-style: italic; color: #444; }
+        /* Konten Utama */
+        #main-content { display: none; width: 80%; max-width: 600px; margin: 50px auto; }
+        .section { margin-bottom: 100px; opacity: 0; transform: translateY(50px); transition: all 1s ease-out; }
+        .visible { opacity: 1; transform: translateY(0); }
         
-        .footer-note { font-family: 'Playfair Display', serif; font-size: 1.5em; margin-top: 50px; padding: 20px; border-top: 1px solid #999; }
-        
-        /* Gaya untuk foto random di akhir */
-        .random-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
-        .random-gallery img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; }
+        img { width: 100%; border-radius: 5px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        h2 { font-family: 'Cormorant Garamond', serif; font-size: 2em; color: #8e44ad; }
+        p { font-size: 1.1em; line-height: 1.8; }
+
+        /* Grid Foto Random */
+        .random-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 20px; }
+        .random-grid img { height: 180px; object-fit: cover; }
     </style>
 </head>
 <body>
 
     <div id="welcome-screen">
-        <h1>Sebuah Persembahan Kecil</h1>
-        <p>Untuk dosen Tadris Matematika.</p>
-        <button class="btn-open" onclick="bukaSurat()">Klik untuk Membaca</button>
+        <p>Persembahan untuk Bapak/Ibu Dosen</p>
+        <h1>Tadris Matematika</h1>
+        <button class="btn-open" onclick="bukaUndangan()">Buka Kenangan</button>
     </div>
 
     <div id="main-content">
-        <div class="moment">
-            <img src="foto 1.jpg" alt="Momen 1">
-            <p>"Di balik setiap angka yang Bapak/Ibu ajarkan, ada doa tulus yang menyertai setiap keberhasilan kami."</p>
+        <div class="section fade-in">
+            <img src="foto 1.jpg">
+            <h2>Awal Langkah</h2>
+            <p>"Terima kasih telah membimbing kami dari nol, mengubah rasa takut akan angka menjadi rasa cinta pada ilmu."</p>
         </div>
 
-        <div class="moment">
-            <img src="foto 2.jpeg" alt="Momen 2">
-            <p>"Kesabaran Bapak/Ibu adalah tempat kami pulang. Ilmu yang Bapak/Ibu berikan adalah warisan yang tak akan pernah lekang."</p>
+        <div class="section fade-in">
+            <img src="foto 2.jpg">
+            <h2>Ketulusan Bimbingan</h2>
+            <p>"Di setiap bimbingan, Bapak/Ibu tidak hanya mengoreksi skripsi kami, tapi juga menguatkan keyakinan kami untuk melangkah lebih jauh."</p>
         </div>
 
-        <div class="moment">
-            <img src="foto 3.jpeg" alt="Momen 3">
-            <p>"Ada jasa yang tak mungkin mampu kami balas dengan kata-kata. Dedikasi Bapak/Ibu adalah bagian tak tergantikan dari diri kami."</p>
+        <div class="section fade-in">
+            <img src="foto 3.jpg">
+            <h2>Jasa yang Abadi</h2>
+            <p>"Ilmu yang Bapak/Ibu berikan adalah lentera. Meski waktu memisahkan kita, jasa Bapak/Ibu akan selamanya tertanam dalam diri kami."</p>
         </div>
 
-        <!-- Bagian Foto Random -->
-        <div class="moment">
-            <h3>Kumpulan Momen Hangat Lainnya</h3>
-            <div class="random-gallery">
-                <img src="foto 4.JPG" alt="Random 1">
-                <img src="foto 5.jpg" alt="Random 2">
-                <img src="foto 6.jpg" alt="Random 3">
-                <img src="foto 7.jpg" alt="Random 4">
-                <img src="foto 8.jpg" alt="Random 5">
-                <img src="foto 9.JPG" alt="Random 6">
-                <img src="foto 10.jpg" alt="Random 7">
-                <img src="foto 11.JPG" alt="Random 8">
-                <img src="foto 12.JPG" alt="Random 9">
-                <img src="foto 13.jpg" alt="Random 10">
-                <img src="foto 14.jpg" alt="Random 11">
-                <img src="foto 15.jpg" alt="Random 12">
-                <img src="foto 20.JPG" alt="Random 13">
-                <img src="foto 17.jpg" alt="Random 14">
-                <img src="foto 18.webp" alt="Random 15">
-                <img src="foto 19.jpg" alt="Random 16">
+        <div class="section fade-in">
+            <h2>Momen Hangat Lainnya</h2>
+            <div class="random-grid">
+                <img src="foto 4.jpg"><img src="foto 5.jpg">
+                <img src="foto 6.jpg"><img src="foto 7.jpg">
             </div>
-        </div>
-
-        <div class="footer-note">
-            "Terima kasih, Bapak/Ibu Dosen TMTK. Jasa Anda adalah lentera yang akan terus menyala dalam perjalanan hidup kami."
+            <p style="text-align: center; margin-top: 30px;">"Terima kasih atas segalanya."</p>
         </div>
     </div>
 
     <audio id="lagu" src="lagu.mp3" loop></audio>
 
     <script>
-        function bukaSurat() {
+        function bukaUndangan() {
             document.getElementById('welcome-screen').style.display = 'none';
             document.getElementById('main-content').style.display = 'block';
             document.getElementById('lagu').play();
-            window.scrollTo(0, 0);
+            
+            // Animasi scroll muncul
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(s => s.classList.add('visible'));
         }
     </script>
 </body>
