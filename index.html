@@ -2,78 +2,110 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <title>Kenangan TMTK - Digital Scrapbook</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kenangan TMTK</title>
     <style>
-        /* Desain Latar Belakang Estetik */
+        /* Desain Latar Belakang Deep Blue */
         body { 
-            margin: 0; background: #1a1a2e; color: #fff; 
-            font-family: 'Segoe UI', sans-serif; display: flex; flex-direction: column; align-items: center; 
+            margin: 0; 
+            background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f1a 100%); 
+            color: #fff; 
+            font-family: 'Segoe UI', sans-serif; 
+            display: flex; flex-direction: column; align-items: center; 
+            min-height: 100vh; padding: 20px;
         }
 
-        /* Container Buku Kaca */
+        /* Glassmorphism Card */
         .glass-box { 
-            background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); 
-            border: 1px solid rgba(255, 255, 255, 0.1); padding: 40px; 
-            border-radius: 20px; max-width: 600px; width: 90%; margin: 50px 0;
-            text-align: center; animation: appear 1s ease-out;
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(20px); 
+            border: 1px solid rgba(255, 255, 255, 0.1); 
+            padding: 40px; 
+            border-radius: 30px; 
+            max-width: 600px; 
+            width: 100%; 
+            margin: 50px 0;
+            text-align: center; 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+            animation: appear 1.2s ease-out;
         }
 
-        img { width: 100%; border-radius: 15px; margin: 20px 0; transition: 0.5s; }
+        img { 
+            width: 100%; 
+            border-radius: 20px; 
+            margin: 25px 0; 
+            transition: transform 0.6s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        }
         
-        /* Animasi Muncul */
-        @keyframes appear { 0% { opacity: 0; transform: translateY(50px); } 100% { opacity: 1; transform: translateY(0); } }
+        img:hover { transform: scale(1.03); }
+
+        /* Animasi Muncul yang Halus */
+        @keyframes appear { 
+            0% { opacity: 0; transform: translateY(30px); } 
+            100% { opacity: 1; transform: translateY(0); } 
+        }
         
         .btn-open { 
-            background: #e94560; color: white; padding: 15px 40px; border: none; 
-            border-radius: 50px; cursor: pointer; font-size: 1.1em; transition: 0.3s;
+            background: linear-gradient(135deg, #e94560, #a13363); 
+            color: white; 
+            padding: 18px 45px; 
+            border: none; 
+            border-radius: 50px; 
+            cursor: pointer; 
+            font-size: 1.1em; 
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+        
+        .btn-open:hover { 
+            transform: scale(1.08); 
+            box-shadow: 0 0 20px rgba(233, 69, 96, 0.5); 
         }
         
         #content { display: none; }
         
-        .random-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
-        .random-grid img { height: 120px; object-fit: cover; }
+        p { line-height: 1.8; color: #dcdde1; font-weight: 300; }
+        
+        .random-grid { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 15px; 
+            margin-top: 30px; 
+        }
+        .random-grid img { height: 150px; object-fit: cover; margin: 0; }
     </style>
 </head>
 <body>
 
+    <!-- Layar Depan -->
     <div class="glass-box" id="welcome">
-        <h1 id="typing">Untuk Dosen TMTK...</h1>
-        <button class="btn-open" onclick="startExperience()">Buka Memori</button>
+        <h1>Persembahan Untuk TMTK</h1>
+        <p>Sebuah narasi perjalanan yang tak terlupakan.</p>
+        <button class="btn-open" onclick="startExperience()">Buka Kenangan</button>
     </div>
 
+    <!-- Konten Utama -->
     <div id="content" class="glass-box">
         <div class="animation-wrapper">
-            <img src="foto 1.jpg">
-            <p>"Jasa Bapak/Ibu adalah lentera yang tak tergantikan dalam perjalanan kami."</p>
+            <img src="foto1.jpg">
+            <p>"Di balik setiap angka yang Bapak/Ibu ajarkan, ada doa tulus yang menyertai langkah kami."</p>
             
-            <img src="foto 2.jpeg">
-            <p>"Terima kasih telah membimbing dengan ketulusan yang luar biasa."</p>
+            <img src="foto2.jpg">
+            <p>"Kesabaran Bapak/Ibu adalah tempat kami pulang. Ilmu ini adalah warisan yang tak akan tergantikan."</p>
             
-            <img src="foto 3.jpeg">
-            <p>"Setiap momen adalah bagian dari diri kami yang dibentuk oleh tangan dingin Bapak/Ibu."</p>
+            <img src="foto3.jpg">
+            <p>"Jasa Bapak/Ibu adalah lentera yang tak tergantikan dalam perjalanan hidup kami."</p>
 
-            <h3>Momen Hangat</h3>
-            <div class="animation-wrapper">
-                <img src="foto 4.JPG">
-                <img src="foto 5.jpg">
-                <img src="foto 6.jpg">
-                <img src="foto 7.jpg">
-                <img src="foto 8.jpg">
-                <img src="foto 9.JPG">
-                <img src="foto 10.jpg">
-                <img src="foto 11.JPG">
-                <img src="foto 12.JPG">
-                <img src="foto 13.jpg">
-                <img src="foto 14.jpg">
-                <img src="foto 15.jpg">
-                <img src="foto 20.JPG">
-                <img src="foto 17.jpg">
-                <img src="foto 18.webp">
-                <img src="foto 19.jpg">
-
+            <h3 style="margin-top:50px;">Momen Hangat Lainnya</h3>
+            <div class="random-grid">
+                <img src="foto4.jpg">
+                <img src="foto5.jpg">
             </div>
             
-            <h2 style="margin-top:40px;">Kami ingin mengucapkan terima kasih yang sebesar-besarnya atas segala bimbingan, saran, dan kesabaran yang diberikan selama proses awal kami masuk sampai penyusunan skripsi/tugas akhir kami. Ilmu dan arahan yang Bapak/Ibu berikan sangat berharga bagi kelulusan kami. Semoga Bapak/Ibu selalu diberikan kesehatan dan keberkahan.</h2>
+            <h2 style="margin-top:40px; color: #e94560;">Terima Kasih Banyak</h2>
         </div>
     </div>
 
@@ -81,22 +113,17 @@
 
     <script>
         function startExperience() {
-            document.getElementById('welcome').style.display = 'none';
-            document.getElementById('content').style.display = 'block';
-            document.getElementById('musik').play();
+            // Animasi transisi keluar untuk layar depan
+            const welcome = document.getElementById('welcome');
+            welcome.style.transition = "all 0.8s ease";
+            welcome.style.opacity = "0";
+            
+            setTimeout(() => {
+                welcome.style.display = 'none';
+                document.getElementById('content').style.display = 'block';
+                document.getElementById('musik').play();
+            }, 800);
         }
-        
-        // Efek ketik sederhana
-        const text = "Untuk Dosen TMTK...";
-        let i = 0;
-        function type() {
-            if (i < text.length) {
-                document.getElementById('typing').innerHTML += text.charAt(i);
-                i++;
-                setTimeout(type, 100);
-            }
-        }
-        window.onload = type;
     </script>
 </body>
 </html>
