@@ -3,145 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Terima Kasih, Dosenku</title>
-
-    <link rel="stylesheet" href="style.css">
+    <title>Terima Kasih, Bapak/Ibu Dosen TMTK</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+        }
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            max-width: 600px;
+            text-align: center;
+        }
+        h1 { color: #2c3e50; }
+        p { line-height: 1.6; font-size: 1.1em; }
+        .footer { margin-top: 30px; font-style: italic; color: #7f8c8d; }
+        .highlight { color: #e67e22; font-weight: bold; }
+    </style>
 </head>
-
 <body>
 
-    <!-- Musik -->
-    <audio id="musik" loop>
-        <source src="music/musik.mp3" type="audio/mpeg">
-    </audio>
-
-    <button class="music-button" onclick="putarMusik()">
-        🎵 Putar Musik
-    </button>
-
-    <!-- Kelopak Bunga -->
-    <div class="petals">
-        🌸 🌼 🌸 🌼 🌸 🌼
+<div class="container">
+    <h1>Terima Kasih & Perpisahan</h1>
+    <p>Kepada yang terhormat Bapak/Ibu Dosen <span class="highlight">Tadris Matematika</span>,</p>
+    <p>
+        Terima kasih atas segala ilmu, bimbingan, dan kesabaran yang Bapak/Ibu berikan selama masa studi kami. 
+        Setiap rumus yang diajarkan dan setiap nasihat yang diberikan akan menjadi bekal berharga bagi perjalanan kami ke depan.
+    </p>
+    <p>Mohon maaf atas segala kesalahan dan kekurangan kami selama berada di bawah bimbingan Bapak/Ibu.</p>
+    <div class="footer">
+        — Salam hangat dari mahasiswa Tadris Matematika —
     </div>
-
-    <!-- Pembuka -->
-    <section class="hero">
-
-        <h1>Terima Kasih, Bapak/Ibu Dosen</h1>
-
-        <p>
-            Terima kasih atas ilmu, bimbingan, kesabaran,
-            dan inspirasi yang telah diberikan kepada kami.
-        </p>
-
-        <button onclick="scrollKePesan()">
-            💌 Buka Pesan Kami
-        </button>
-
-    </section>
-
-    <!-- Profil Dosen -->
-    <section class="profil">
-
-        <h2>🎓 Sosok yang Kami Hormati</h2>
-
-        <img src="images/foto-dosen.jpg" class="foto-dosen">
-
-        <h3>Nama Dosen, S.Pd., M.Pd.</h3>
-
-        <p>
-            Terima kasih telah menjadi sosok yang selalu membimbing,
-            mengarahkan, dan memberikan motivasi kepada kami.
-        </p>
-
-    </section>
-
-    <!-- Ucapan -->
-    <section id="pesan">
-
-        <h2>💌 Ucapan dari Kami</h2>
-
-        <div class="ucapan-container">
-
-            <div class="ucapan">
-                <h3>Mahasiswa 1</h3>
-
-                <p>
-                    Terima kasih atas segala ilmu dan bimbingan
-                    yang telah diberikan kepada kami.
-                </p>
-            </div>
-
-            <div class="ucapan">
-                <h3>Mahasiswa 2</h3>
-
-                <p>
-                    Setiap nasihat dan ilmu yang diberikan
-                    akan selalu kami ingat.
-                </p>
-            </div>
-
-            <div class="ucapan">
-                <h3>Mahasiswa 3</h3>
-
-                <p>
-                    Terima kasih telah menjadi bagian penting
-                    dalam perjalanan pendidikan kami.
-                </p>
-            </div>
-
-        </div>
-
-    </section>
-
-    <!-- Galeri -->
-    <section class="galeri">
-
-        <h2>📸 Galeri Kenangan</h2>
-
-        <div class="foto-container">
-
-            <img src="images/foto1.jpg">
-            <img src="images/foto2.jpg">
-            <img src="images/foto3.jpg">
-
-        </div>
-
-    </section>
-
-    <!-- Video -->
-    <section class="video">
-
-        <h2>🎬 Video Ucapan</h2>
-
-        <video controls>
-
-            <source src="video/ucapan.mp4" type="video/mp4">
-
-            Browser Anda tidak mendukung video.
-
-        </video>
-
-    </section>
-
-    <!-- Penutup -->
-    <section class="penutup">
-
-        <h2>🌸 Terima Kasih Atas Segalanya 🌸</h2>
-
-        <p>
-            Ilmu yang diberikan akan menjadi bekal dalam perjalanan kami.
-            Jasa dan kebaikan Bapak/Ibu akan selalu kami kenang.
-        </p>
-
-        <p class="akhir">
-            Dengan penuh rasa hormat dan terima kasih ❤️
-        </p>
-
-    </section>
-
-    <script src="script.js"></script>
+</div>
 
 </body>
 </html>
