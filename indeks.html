@@ -3,44 +3,145 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terima Kasih, Bapak/Ibu Dosen</title>
+
+    <title>Terima Kasih, Dosenku</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <div class="container">
-        <div class="card">
-            <h1>🌸 Terima Kasih, Bapak/Ibu Dosen 🌸</h1>
+    <!-- Musik -->
+    <audio id="musik" loop>
+        <source src="music/musik.mp3" type="audio/mpeg">
+    </audio>
 
-            <p>
-                Terima kasih atas segala ilmu, bimbingan, kesabaran,
-                dan motivasi yang telah diberikan selama proses perkuliahan.
-            </p>
+    <button class="music-button" onclick="putarMusik()">
+        🎵 Putar Musik
+    </button>
 
-            <p>
-                Setiap nasihat dan ilmu yang diberikan akan selalu menjadi
-                bekal berharga dalam perjalanan kami menuju masa depan.
-            </p>
-
-            <h2>💐 Terima Kasih Atas Segalanya 💐</h2>
-
-            <p class="nama">
-                Dengan penuh rasa hormat dan terima kasih,<br>
-                <b>Mahasiswa/i yang Bapak/Ibu bimbing</b>
-            </p>
-
-            <button onclick="tampilkanPesan()">Klik untuk Pesan Spesial 💌</button>
-
-            <p id="pesan"></p>
-        </div>
+    <!-- Kelopak Bunga -->
+    <div class="petals">
+        🌸 🌼 🌸 🌼 🌸 🌼
     </div>
 
-    <script>
-        function tampilkanPesan() {
-            document.getElementById("pesan").innerHTML =
-            "Jasa dan ilmu Bapak/Ibu akan selalu kami kenang. Terima kasih telah menjadi bagian penting dalam perjalanan kami. ❤️";
-        }
-    </script>
+    <!-- Pembuka -->
+    <section class="hero">
+
+        <h1>Terima Kasih, Bapak/Ibu Dosen</h1>
+
+        <p>
+            Terima kasih atas ilmu, bimbingan, kesabaran,
+            dan inspirasi yang telah diberikan kepada kami.
+        </p>
+
+        <button onclick="scrollKePesan()">
+            💌 Buka Pesan Kami
+        </button>
+
+    </section>
+
+    <!-- Profil Dosen -->
+    <section class="profil">
+
+        <h2>🎓 Sosok yang Kami Hormati</h2>
+
+        <img src="images/foto-dosen.jpg" class="foto-dosen">
+
+        <h3>Nama Dosen, S.Pd., M.Pd.</h3>
+
+        <p>
+            Terima kasih telah menjadi sosok yang selalu membimbing,
+            mengarahkan, dan memberikan motivasi kepada kami.
+        </p>
+
+    </section>
+
+    <!-- Ucapan -->
+    <section id="pesan">
+
+        <h2>💌 Ucapan dari Kami</h2>
+
+        <div class="ucapan-container">
+
+            <div class="ucapan">
+                <h3>Mahasiswa 1</h3>
+
+                <p>
+                    Terima kasih atas segala ilmu dan bimbingan
+                    yang telah diberikan kepada kami.
+                </p>
+            </div>
+
+            <div class="ucapan">
+                <h3>Mahasiswa 2</h3>
+
+                <p>
+                    Setiap nasihat dan ilmu yang diberikan
+                    akan selalu kami ingat.
+                </p>
+            </div>
+
+            <div class="ucapan">
+                <h3>Mahasiswa 3</h3>
+
+                <p>
+                    Terima kasih telah menjadi bagian penting
+                    dalam perjalanan pendidikan kami.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Galeri -->
+    <section class="galeri">
+
+        <h2>📸 Galeri Kenangan</h2>
+
+        <div class="foto-container">
+
+            <img src="images/foto1.jpg">
+            <img src="images/foto2.jpg">
+            <img src="images/foto3.jpg">
+
+        </div>
+
+    </section>
+
+    <!-- Video -->
+    <section class="video">
+
+        <h2>🎬 Video Ucapan</h2>
+
+        <video controls>
+
+            <source src="video/ucapan.mp4" type="video/mp4">
+
+            Browser Anda tidak mendukung video.
+
+        </video>
+
+    </section>
+
+    <!-- Penutup -->
+    <section class="penutup">
+
+        <h2>🌸 Terima Kasih Atas Segalanya 🌸</h2>
+
+        <p>
+            Ilmu yang diberikan akan menjadi bekal dalam perjalanan kami.
+            Jasa dan kebaikan Bapak/Ibu akan selalu kami kenang.
+        </p>
+
+        <p class="akhir">
+            Dengan penuh rasa hormat dan terima kasih ❤️
+        </p>
+
+    </section>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
