@@ -3,72 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jurnal Kenangan TMTK</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
+    <title>Surat Cinta untuk Dosen TMTK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;1,400&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
     <style>
         body { 
-            margin: 0; padding: 0; background: #fdfbf7; font-family: 'Montserrat', sans-serif; color: #444; 
-            display: flex; flex-direction: column; align-items: center; min-height: 100vh;
+            margin: 0; padding: 0; font-family: 'Poppins', sans-serif;
+            background: linear-gradient(-45deg, #e3e2df, #d1ccc0, #b2bec3, #a29bfe);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+            color: #2d3436; display: flex; flex-direction: column; align-items: center; min-height: 100vh;
         }
+        @keyframes gradient { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
 
-        /* Layar Awal */
         #welcome-screen { 
             text-align: center; height: 100vh; display: flex; flex-direction: column; 
             justify-content: center; align-items: center; width: 100%;
-            background: linear-gradient(135deg, #2c3e50, #4ca1af); color: white;
         }
+        h1 { font-family: 'Playfair Display', serif; font-size: 2.5em; margin-bottom: 10px; }
+
         .btn-open { 
-            margin-top: 30px; padding: 20px 40px; font-size: 1.2em; background: #e67e22; 
-            color: white; border: none; border-radius: 50px; cursor: pointer; transition: 0.3s;
+            padding: 15px 30px; font-size: 1.1em; background: transparent; border: 2px solid #2d3436;
+            cursor: pointer; transition: 0.4s; border-radius: 5px;
         }
-        .btn-open:hover { transform: scale(1.05); background: #d35400; }
+        .btn-open:hover { background: #2d3436; color: white; }
 
-        /* Konten */
         #main-content { display: none; width: 90%; max-width: 600px; padding: 40px 0; }
-        .moment { margin-bottom: 60px; animation: fadeInUp 1s ease; }
+        .moment { margin-bottom: 80px; text-align: center; }
+        .moment img { width: 100%; border-radius: 10px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .moment p { font-size: 1.2em; line-height: 1.8; font-style: italic; color: #444; }
         
-        /* Foto Utuh */
-        .moment img { width: 100%; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.15); display: block; }
+        .footer-note { font-family: 'Playfair Display', serif; font-size: 1.5em; margin-top: 50px; padding: 20px; border-top: 1px solid #999; }
         
-        /* Teks Menyentuh */
-        .moment h3 { font-family: 'Lora', serif; color: #2c3e50; font-size: 1.5em; margin-top: 20px; }
-        .moment p { font-size: 1.1em; line-height: 1.8; color: #555; font-style: italic; }
-
-        @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+        /* Gaya untuk foto random di akhir */
+        .random-gallery { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 20px; }
+        .random-gallery img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; }
     </style>
 </head>
 <body>
 
     <div id="welcome-screen">
-        <h1>Perjalanan Indah Kita</h1>
-        <p>Sebuah surat cinta untuk Bapak/Ibu Dosen TMTK</p>
-        <button class="btn-open" onclick="bukaSurat()">Buka Kenangan</button>
+        <h1>Sebuah Persembahan Kecil</h1>
+        <p>Untuk guru, mentor, dan inspirasi kami.</p>
+        <button class="btn-open" onclick="bukaSurat()">Klik untuk Membaca</button>
     </div>
 
     <div id="main-content">
-        <!-- Momen 1 -->
         <div class="moment">
             <img src="foto 1.jpg" alt="Momen 1">
-            <h3>Awal Perjalanan</h3>
-            <p>"Terima kasih telah menyambut kami dengan pintu ilmu yang terbuka lebar. Di sini, di kelas ini, langkah awal kami sebagai mahasiswa matematika dimulai dengan penuh rasa ingin tahu."</p>
+            <p>"Di balik setiap angka yang Bapak/Ibu ajarkan, ada doa tulus yang menyertai setiap keberhasilan kami."</p>
         </div>
 
-        <!-- Momen 2 -->
         <div class="moment">
             <img src="foto 2.jpeg" alt="Momen 2">
-            <h3>Bimbingan yang Tak Terlupakan</h3>
-            <p>"Dalam setiap coretan rumus di papan tulis dan setiap kritik atas skripsi kami, kami menemukan ketulusan. Bapak/Ibu bukan hanya mengajar hitungan, tapi mengajar kami cara menghadapi kerumitan hidup."</p>
+            <p>"Kesabaran Bapak/Ibu adalah tempat kami pulang. Ilmu yang Bapak/Ibu berikan adalah warisan yang tak akan pernah lekang."</p>
         </div>
 
-        <!-- Momen 3 -->
         <div class="moment">
             <img src="foto 3.jpeg" alt="Momen 3">
-            <h3>Sebuah Perpisahan Sementara</h3>
-            <p>"Waktu memang berjalan cepat, namun jejak kebaikan Bapak/Ibu akan selalu menetap. Semoga setiap ilmu yang Bapak/Ibu bagikan menjadi amal jariyah yang tak pernah putus."</p>
+            <p>"Ada jasa yang tak mungkin mampu kami balas dengan kata-kata. Dedikasi Bapak/Ibu adalah bagian tak tergantikan dari diri kami."</p>
         </div>
 
-        <div style="text-align: center; margin-top: 50px;">
-            <p><strong>kami ingin mengucapkan terima kasih yang sebesar-besarnya atas segala bimbingan, saran, dan kesabaran yang diberikan selama proses awal pembelajaran sampai penyusunan skripsi/tugas akhir kami. Ilmu dan arahan yang Bapak/Ibu berikan sangat berharga bagi kelulusan kami. Semoga Bapak/Ibu selalu diberikan kesehatan dan keberkahan..</strong></p>
+        <!-- Bagian Foto Random -->
+        <div class="moment">
+            <h3>Kumpulan Momen Hangat Lainnya</h3>
+            <div class="random-gallery">
+                <img src="foto 4.jpg" alt="Random 1">
+                <img src="foto 5.jpg" alt="Random 2">
+                <img src="foto 6.jpg" alt="Random 3">
+                <img src="foto 7.jpg" alt="Random 4">
+                <img src="foto 8.jpg" alt="Random 5">
+                <img src="foto 9.jpg" alt="Random 6">
+                <img src="foto 10.jpg" alt="Random 7">
+                <img src="foto 11.jpg" alt="Random 8">
+                <img src="foto 12.jpg" alt="Random 9">
+                <img src="foto 13.jpg" alt="Random 10">
+                <img src="foto 14.jpg" alt="Random 11">
+                <img src="foto 15.jpg" alt="Random 12">
+                <img src="foto 16.jpg" alt="Random 13">
+                <img src="foto 17.jpg" alt="Random 14">
+                <img src="foto 18.webp" alt="Random 15">
+                <img src="foto 19.jpg" alt="Random 16">
+                <img src="foto 20.jpg" alt="Random 17">
+            </div>
+        </div>
+
+        <div class="footer-note">
+            "Terima kasih, Bapak/Ibu Dosen TMTK. Jasa Anda adalah lentera yang akan terus menyala dalam perjalanan hidup kami."
         </div>
     </div>
 
