@@ -2,142 +2,108 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kenangan TMTK</title>
+    <title>3D Interactive Memory</title>
     <style>
-        /* Desain Latar Belakang Deep Blue */
         body { 
-            margin: 0; 
-            background: radial-gradient(circle at center, #1a1a2e 0%, #0f0f1a 100%); 
-            color: #fff; 
-            font-family: 'Segoe UI', sans-serif; 
-            display: flex; flex-direction: column; align-items: center; 
-            min-height: 100vh; padding: 20px;
+            margin: 0; background: radial-gradient(circle at center, #1e1e2f 0%, #0f0c29 100%);
+            color: white; font-family: 'Poppins', sans-serif;
+            display: flex; justify-content: center; align-items: center; min-height: 100vh;
+            overflow: hidden; perspective: 1000px;
         }
 
-        /* Glassmorphism Card */
-        .glass-box { 
-            background: rgba(255, 255, 255, 0.03); 
-            backdrop-filter: blur(20px); 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
-            padding: 40px; 
-            border-radius: 30px; 
-            max-width: 600px; 
-            width: 100%; 
-            margin: 50px 0;
-            text-align: center; 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            animation: appear 1.2s ease-out;
+        /* Latar belakang partikel estetik */
+        .particles { position: absolute; width: 100%; height: 100%; pointer-events: none; }
+
+        /* Card 3D dengan efek Tilt */
+        .card-container {
+            width: 350px; height: 500px; transform-style: preserve-3d;
+            transition: transform 0.2s ease-out;
         }
 
-        img { 
-            width: 100%; 
-            border-radius: 20px; 
-            margin: 25px 0; 
-            transition: transform 0.6s ease;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+        .glass-box {
+            width: 100%; height: 100%; background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 30px; padding: 40px; text-align: center;
+            display: flex; flex-direction: column; justify-content: center; align-items: center;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
         }
-        
-        img:hover { transform: scale(1.03); }
 
-        /* Animasi Muncul yang Halus */
-        @keyframes appear { 
-            0% { opacity: 0; transform: translateY(30px); } 
-            100% { opacity: 1; transform: translateY(0); } 
-        }
+        .student-float { width: 140px; animation: float 3s infinite ease-in-out; }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+
+        #content { display: none; width: 90%; max-width: 500px; text-align: center; }
+        .gallery-img { width: 100%; border-radius: 20px; margin-bottom: 20px; transition: 0.5s; }
         
         .btn-open { 
-            background: linear-gradient(135deg, #e94560, #a13363); 
-            color: white; 
-            padding: 18px 45px; 
-            border: none; 
-            border-radius: 50px; 
-            cursor: pointer; 
-            font-size: 1.1em; 
-            transition: all 0.4s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: bold;
+            background: linear-gradient(45deg, #ff4757, #ff6b81);
+            color: white; border: none; padding: 15px 30px; border-radius: 50px;
+            cursor: pointer; font-weight: bold; margin-top: 20px;
         }
-        
-        .btn-open:hover { 
-            transform: scale(1.08); 
-            box-shadow: 0 0 20px rgba(233, 69, 96, 0.5); 
-        }
-        
-        #content { display: none; }
-        
-        p { line-height: 1.8; color: #dcdde1; font-weight: 300; }
-        
-        .random-grid { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 15px; 
-            margin-top: 30px; 
-        }
-        .random-grid img { height: 150px; object-fit: cover; margin: 0; }
     </style>
 </head>
 <body>
 
-    <!-- Layar Depan -->
-    <div class="glass-box" id="welcome">
-        <h1>Persembahan Untuk TMTK</h1>
-        <p>Sebuah narasi perjalanan yang tak terlupakan.</p>
-        <button class="btn-open" onclick="startExperience()">Buka Kenangan</button>
+    <!-- Partikel Background -->
+    <div class="particles"></div>
+
+    <!-- Kartu 3D -->
+    <div class="card-container" id="welcome" onmousemove="tilt(event)" onmouseleave="resetTilt()">
+        <div class="glass-box">
+            <h1>TMTK Journey</h1>
+            <img src="mahasiswa.jpeg" class="student-float" alt="Mahasiswa">
+            <p>Sebuah narasi kenangan yang takkan terlupa.</p>
+            <button class="btn-open" onclick="bukaSurat()">Sentuh untuk Membuka</button>
+        </div>
     </div>
 
-    <!-- Konten Utama -->
-    <div id="content" class="glass-box">
-        <div class="animation-wrapper">
-            <img src="foto 1.jpg">
-            <p>"Di balik setiap angka yang Bapak/Ibu ajarkan, ada doa tulus yang menyertai langkah kami."</p>
-            
-            <img src="foto 2.jpeg">
-            <p>"Kesabaran Bapak/Ibu adalah tempat kami pulang. Ilmu ini adalah warisan yang tak akan tergantikan."</p>
-            
-            <img src="foto 3.jpeg">
-            <p>"Jasa Bapak/Ibu adalah lentera yang tak tergantikan dalam perjalanan hidup kami."</p>
+    <!-- Konten -->
+    <div id="content">
+        <img src="foto 1.jpg" class="gallery-img">
+        <p>"Di balik setiap angka yang Bapak/Ibu ajarkan, ada doa tulus yang menyertai langkah kami."</p>
+        <img src="foto 2.jpeg" class="gallery-img">
+        <p>"Kesabaran Bapak/Ibu adalah tempat kami pulang. Ilmu ini adalah warisan yang tak akan tergantikan."</p>
+        <img src="foto 3.jpeg" class="gallery-img">
+        <p>"Jasa Bapak/Ibu adalah lentera yang tak tergantikan dalam perjalanan hidup kami."</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px;">
+            <img src="foto 4.JPG" class="gallery-img">
+            <img src="foto 5.jpg" class="gallery-img">
+            <img src="foto 6.jpg" class="gallery-img">
+            <img src="foto 7.jpg" class="gallery-img">
+            <img src="foto 8.jpg" class="gallery-img">
+            <img src="foto 9.JPG" class="gallery-img">
+            <img src="foto 10.jpg" class="gallery-img">
+            <img src="foto 11.JPG" class="gallery-img">
+            <img src="foto 12.JPG" class="gallery-img">
+            <img src="foto 13.jpg" class="gallery-img">
+            <img src="foto 14.jpg" class="gallery-img">
+            <img src="foto 15.jpg" class="gallery-img">
+            <img src="foto 20.JPG" class="gallery-img">
+            <img src="foto 17.jpg" class="gallery-img">
+            <img src="foto 18.webp" class="gallery-img">
+            <img src="foto 19.jpg" class="gallery-img">
 
-            <h3 style="margin-top:50px;">Momen Hangat Lainnya</h3>
-            <div class="animation-wrapper">
-                <img src="foto 4.JPG">
-                <img src="foto 5.jpg">
-                <img src="foto 6.jpg">
-                <img src="foto 7.jpg">
-                <img src="foto 8.jpg">
-                <img src="foto 9.JPG">
-                <img src="foto 10.jpg">
-                <img src="foto 11.JPG">
-                <img src="foto 12.JPG">
-                <img src="foto 13.jpg">
-                <img src="foto 14.jpg">
-                <img src="foto 15.jpg">
-                <img src="foto 20.JPG">
-                <img src="foto 17.jpg">
-                <img src="foto 18.webp">
-                <img src="foto 19.jpg">
-
-            </div>
-            
-            <h2 style="margin-top:40px; color: #e94560;">Terima Kasih Banyak</h2>
         </div>
+        <h2 style="color: #ff6b81;">Jasa Bapak/Ibu Abadi</h2>
     </div>
 
     <audio id="musik" src="lagu.mp3" loop></audio>
 
     <script>
-        function startExperience() {
-            // Animasi transisi keluar untuk layar depan
-            const welcome = document.getElementById('welcome');
-            welcome.style.transition = "all 0.8s ease";
-            welcome.style.opacity = "0";
-            
-            setTimeout(() => {
-                welcome.style.display = 'none';
-                document.getElementById('content').style.display = 'block';
-                document.getElementById('musik').play();
-            }, 800);
+        // Efek 3D Tilt mengikuti mouse
+        function tilt(e) {
+            const card = document.querySelector('.card-container');
+            const { offsetWidth: width, offsetHeight: height } = card;
+            let { offsetX: x, offsetY: y } = e;
+            let xRotation = ((y / height) - 0.5) * 20;
+            let yRotation = ((x / width) - 0.5) * -20;
+            card.style.transform = `rotateX(${xRotation}deg) rotateY(${yRotation}deg)`;
+        }
+        function resetTilt() { document.querySelector('.card-container').style.transform = "rotateX(0deg) rotateY(0deg)"; }
+
+        function bukaSurat() {
+            document.getElementById('welcome').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+            document.getElementById('musik').play();
         }
     </script>
 </body>
