@@ -3,33 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terima Kasih Dosen TMTK</title>
+    <title>Surat Cinta untuk Dosen TMTK</title>
     <style>
-        body { font-family: 'Segoe UI', sans-serif; background: #fdfbf7; text-align: center; padding: 50px 20px; }
-        .container { background: white; padding: 40px; border-radius: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); max-width: 600px; margin: auto; }
-        img { width: 100%; border-radius: 15px; margin-bottom: 20px; }
-        h1 { color: #2c3e50; }
-        .audio-player { margin: 20px 0; background: #f4f4f4; padding: 15px; border-radius: 10px; }
+        body { font-family: 'Segoe UI', sans-serif; background: #fdfbf7; margin: 0; color: #333; line-height: 1.6; }
+        .section { max-width: 800px; margin: 50px auto; padding: 40px; background: white; border-radius: 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        h1, h2 { color: #2c3e50; text-align: center; }
+        img { width: 100%; border-radius: 15px; margin: 20px 0; transition: transform 0.5s; }
+        img:hover { transform: scale(1.02); }
+        .audio-fix { position: fixed; bottom: 20px; right: 20px; background: white; padding: 10px; border-radius: 50px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        p { font-size: 1.2em; text-align: justify; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <!-- Gambar sesuai nama file di GitHub Anda -->
-    <img src="WhatsApp Image 2025-07-02 at 11.49.45_35eb9a4b.jpg" alt="Kenangan Bersama Dosen">
-    
-    <h1>Terima Kasih, Bapak/Ibu Dosen TMTK</h1>
-    <p>Terima kasih atas bimbingan yang luar biasa. Ilmu yang diberikan akan selalu kami ingat.</p>
+    <div class="section">
+        <h1>Terima Kasih, Bapak/Ibu Dosen</h1>
+        <p>Halaman ini kami buat khusus sebagai persembahan kecil atas dedikasi luar biasa yang telah Bapak/Ibu berikan kepada kami mahasiswa Tadris Matematika.</p>
+        <img src="foto1.jpg" alt="Kenangan 1">
+    </div>
 
-    <div class="audio-player">
-        <p>Lagu Kenangan:</p>
-        <!-- Audio dengan tombol control bawaan -->
-        <audio controls>
+    <div class="section">
+        <h2>Perjalanan yang Berkesan</h2>
+        <p>Setiap pertemuan di kelas, setiap bimbingan skripsi, dan setiap nasihat yang Bapak/Ibu berikan adalah potongan-potongan berharga yang membentuk siapa kami hari ini. Matematika mungkin tentang angka, tapi Bapak/Ibu mengajarkan kami tentang nilai kehidupan.</p>
+        <img src="foto2.jpg" alt="Kenangan 2">
+    </div>
+
+    <div class="section">
+        <h2>Pesan Perpisahan</h2>
+        <p>Mungkin jalan kami akan berbeda setelah ini, namun ilmu yang Bapak/Ibu berikan akan terus menjadi kompas bagi kami. Mohon maaf jika selama masa studi ada perilaku kami yang kurang berkenan.</p>
+        <p>Sehat selalu untuk Bapak/Ibu. Sampai jumpa di lain waktu!</p>
+    </div>
+
+    <!-- Musik tetap ada di pojok bawah -->
+    <div class="audio-fix">
+        <audio controls autoplay>
             <source src="lagu.mp3" type="audio/mpeg">
-            
         </audio>
     </div>
-</div>
 
 </body>
 </html>
